@@ -1,0 +1,6 @@
+<span *ngIf="!editing">{{passanger.name}} - {{passanger.age}}</span>
+<input *ngIf="editing" [value]="passanger.name" (change)="onNameChange(username.value)" #username/>
+<button (click)="updatePassanger()">{{(editing ? 'Done' : 'Edit')}}</button>
+<ul>
+    <li *ngFor="let child of passanger.children">{{child.name}}</li>
+</ul>

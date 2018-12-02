@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <h1>My Passangers</h1>
+
+  <div *ngFor="let passanger of passangers">
+    {{passanger.name}}
+  </div>
+
+  <passangers-dashboard-total [passangers]="passangers"></passangers-dashboard-total>
+  <ul>
+    <li *ngFor="let passanger of passangers" [class.check-in]="passanger.checking">
+      <passangers-dashboard-details [passanger]="passanger" (clickUpdatePassanger)="updatePassanger($event)"></passangers-dashboard-details>
+    </li>
+  </ul>
+</div>
+
